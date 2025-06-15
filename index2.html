@@ -3,41 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My bookmarks</title>
+    <title>🌙 Cool Bookmarks Hub</title>
     <link rel="stylesheet" href="style2.css">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            min-height: 100vh;
+            background: linear-gradient(120deg, #18181b 0%, #232526 100%);
+        }
+        .main-card {
+            background: rgba(36, 37, 38, 0.97);
+            border-radius: 32px;
+            box-shadow: 0 8px 40px #18181b99;
+            padding: 40px 32px 32px 32px;
+            margin-top: 48px;
+            max-width: 420px;
+            width: 95%;
+            text-align: center;
+            border: 2px solid #ffb347;
+        }
+        h1 {
+            font-size: 2.3em;
+            margin-bottom: 0.2em;
+            color: #ffb347;
+            letter-spacing: 0.08em;
+            text-shadow: 2px 2px 0 #232526, 0 0 16px #ffb34788;
+            animation: bounce 1.2s infinite alternate;
+        }
+        @keyframes bounce {
+            0% { transform: translateY(0);}
+            100% { transform: translateY(-12px);}
+        }
+        .bookmark-list {
+            display: flex;
+            flex-direction: column;
+            gap: 18px;
+            margin: 32px 0 24px 0;
+        }
+        .bookmark-list a {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 12px;
+            font-size: 1.18em;
+            color: #232526;
+            background: linear-gradient(90deg, #ffb347 60%, #ffcc80 100%);
+            border-radius: 16px;
+            padding: 12px 20px;
+            font-weight: bold;
+            box-shadow: 2px 2px 12px #23252644, 0 2px 8px #ffb34744;
+            border: 2px solid transparent;
+            transition: 
+                transform 0.2s cubic-bezier(.4,2,.6,1), 
+                background 0.2s, 
+                color 0.2s, 
+                box-shadow 0.2s;
+            text-decoration: none;
+        }
+        .bookmark-list a:hover {
+            background: linear-gradient(90deg, #232526 60%, #414345 100%);
+            color: #ffb347;
+            transform: scale(1.07) rotate(-3deg);
+            box-shadow: 0 0 16px #ffb34799, 0 2px 16px #23252699;
+            border: 2px solid #ffb347;
+            text-shadow: 0 0 6px #ffb34788;
+        }
+        .section-title {
+            color: #ffe082;
+            font-size: 1.2em;
+            margin: 2em 0 0.7em 0;
+            letter-spacing: 0.06em;
+        }
+        #fun-footer {
+            text-align: center;
+            margin-top: 2em;
+            font-size: 1.1em;
+            color: #ffe082;
+            letter-spacing: 0.04em;
+        }
+    </style>
 </head>
 <body>
-    <!-- Confetti Canvas -->
-    <canvas id="confetti-canvas" style="position:fixed;top:0;left:0;width:100vw;height:100vh;pointer-events:none;z-index:999;"></canvas>
-
-    <h1>🎉 Primary bookmarks 🎉</h1>
-    <div class="bookmark-group">
-        <a href="https://www.google.com" target="_blank">🔎 Open Google</a>
-        <br>
-        <a href="https://www.instagram.com" target="_blank">📸 Open Instagram</a>
-        <br>
-        <a href="https://www.youtube.com" target="_blank">🎬 Open YouTube</a>
-        <br>
-        <a href="https://www.twitter.com" target="_blank">🐦 Open Twitter</a>
-        <br>
-        <a href="https://www.telegram.com" target="_blank">✈️ Open Telegram</a>
+    <div class="main-card">
+        <h1>🌙 Cool Bookmarks Hub</h1>
+        <div class="section-title">My Favorite Links</div>
+        <div class="bookmark-list">
+            <a href="https://www.google.com" target="_blank">🔎 Google</a>
+            <a href="https://www.instagram.com/idcare19" target="_blank">📸 Instagram</a>
+            <a href="https://www.youtube.com" target="_blank">🎬 YouTube</a>
+            <a href="https://x.com/idcare19_" target="_blank">🐦 Twitter</a>
+            <a href="https://www.telegram.com/t.me/idcare19" target="_blank">✈️ Telegram</a>
+        </div>
+        <div class="section-title">✨ More Cool Stuff</div>
+        <div class="bookmark-list">
+            <a href="https://www.reddit.com/user/idcare19/" target="_blank">👽 Reddit</a>
+            <a href="https://www.linkedin.com/in/abhishek-mamgai-500710363/" target="_blank">💼 LinkedIn</a>
+            <a href="www.pinterest.com/idcare19" target="_blank">📌 Pinterest</a>
+            <a href="https://www.tumblr.com/idcare19" target="_blank">🌈 Tumblr</a>
+        </div>
+        <div id="fun-footer">
+            <p>Made by <span style="color:#1633db;">♥</span> by idcare19 &mdash; <span id="random-emoji">💻🔥</span></p>
+        </div>
     </div>
-
-    <h2>✨ Secondary bookmarks ✨</h2>
-    <div class="bookmark-group">
-        <a href="https://www.reddit.com" target="_blank">👽 Open Reddit</a>
-        <br>
-        <a href="https://www.linkedin.com" target="_blank">💼 Open LinkedIn</a>
-        <br>
-        <a href="https://www.pinterest.com" target="_blank">📌 Open Pinterest</a>
-        <br>
-        <a href="https://www.tumblr.com" target="_blank">🌈 Open Tumblr</a>
-    </div>
-
-    <div id="fun-footer">
-        <p>Made with <span style="color:#f43f5e;">♥</span> by Avi &mdash; <span id="random-emoji">😎</span></p>
-    </div>
-
-    <script src="script.js"></script>
+    <script>
+        // Change emoji every 2 seconds for fun!
+        const emojis = ["😎", "🤩", "🎉", "🚀", "🌈", "🔥", "🥳"];
+        setInterval(() => {
+            document.getElementById('random-emoji').textContent = emojis[Math.floor(Math.random() * emojis.length)];
+        }, 2000);
+    </script>
 </body>
 </html>
